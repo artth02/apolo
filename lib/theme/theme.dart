@@ -15,7 +15,7 @@ const textSelectionColor = Color(0xFFc2185b);
 const accentColor = Color(0xFFc2185b);
 
 class Theme {
-  final darkTheme = new ThemeData(
+  final defaultTheme = new ThemeData(
     primaryColor: primaryColor,
     primaryColorLight: primaryLightColor,
     primaryColorDark: primaryDarkColor,
@@ -23,7 +23,14 @@ class Theme {
     accentColor: accentColor,
   );
 
-  final primaryColorText = TextStyle(color: primaryTextColor);
+  final primaryColorText =
+      TextStyle(color: primaryTextColor, fontWeight: FontWeight.w700);
 
   final secondaryColorText = TextStyle(color: secondaryTextColor);
+
+  final separators = new Separators();
+}
+
+class Separators {
+  Color gray = Colors.grey[500];
 }
