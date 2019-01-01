@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
-import '../../widgets/listViewItemWithImage/listViewItemWithImage.dart';
 import 'dart:convert';
+import '../../widgets/listViewItemWithImage/listViewItemWithImage.dart';
 import '../../widgets/listViewItemWithImage/listViewItemWithImage.class.dart';
+import '../exercisesDetails/exercisesDetails.dart';
 
-class TrainingCatalogScreen extends State<TrainingCatalogScreenStatefullWidget> {
+class TrainingCatalogScreen
+    extends State<TrainingCatalogScreenStatefullWidget> {
   var listJSON = '''[{
       "description": "MEMBROS INFERIORES I",
       "id": 1
@@ -32,16 +34,21 @@ class TrainingCatalogScreen extends State<TrainingCatalogScreenStatefullWidget> 
 
   @override
   Widget build(BuildContext context) {
-    List<ListViewItemWithImageClass> roadMapList = (jsonDecode(listJSON) as List)
-        .map((item) => new ListViewItemWithImageClass.fromJson(item))
-        .toList();
+    var exercisesDetailScreenRoute =
+        MaterialPageRoute(builder: (context) => ExercisesDetails(),maintainState: true);
+
+    List<ListViewItemWithImageClass> roadMapList =
+        (jsonDecode(listJSON) as List)
+            .map((item) => new ListViewItemWithImageClass.fromJson(item))
+            .toList();
 
     return ListView.builder(
-        padding: const EdgeInsets.all(16.0), 
+        padding: const EdgeInsets.all(16.0),
         itemCount: roadMapList.length,
         itemExtent: 100,
         itemBuilder: (context, i) {
-          return new ListViewItemWithImage().build(context,roadMapList[i].description);
+          return new ListViewItemWithImage().build(
+              context, exercisesDetailScreenRoute, roadMapList[i].description);
         });
   }
 }
