@@ -5,17 +5,13 @@ import './trainingCatalog.screen.dart';
 class TrainingCatalog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      theme: appTheme.Theme().defaultTheme,
-      title: 'Welcome to Flutter',
-      home: Scaffold(
+    return Scaffold(
         appBar: AppBar(
           title: Text('Welcome to Flutter'),
         ),
         body: Center(
           child: TrainingCatalogScreen().build(context),
         ),
-      ),
-    );
+      );
   }
 }

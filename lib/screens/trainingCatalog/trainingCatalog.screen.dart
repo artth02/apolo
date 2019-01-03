@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'dart:convert';
 import '../../widgets/listViewItemWithImage/listViewItemWithImage.dart';
 import '../../widgets/listViewItemWithImage/listViewItemWithImage.class.dart';
-import '../exercisesDetails/exercisesDetails.dart';
 
 class TrainingCatalogScreen
     extends State<TrainingCatalogScreenStatefullWidget> {
@@ -34,8 +33,7 @@ class TrainingCatalogScreen
 
   @override
   Widget build(BuildContext context) {
-    var exercisesDetailScreenRoute =
-        MaterialPageRoute(builder: (context) => ExercisesDetails(),maintainState: true);
+    const exercisesDetailScreenRoute = '/exercisesDetails';
 
     List<ListViewItemWithImageClass> roadMapList =
         (jsonDecode(listJSON) as List)

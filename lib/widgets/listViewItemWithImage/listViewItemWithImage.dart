@@ -4,7 +4,7 @@ import '../../theme/theme.dart' as appTheme;
 class ListViewItemWithImage {
   Widget build(
     BuildContext context,
-    MaterialPageRoute screenToRouteTo,
+    String screenToRouteTo,
     String text,
   ) {
     return Column(mainAxisSize: MainAxisSize.max, children: <Widget>[
@@ -24,7 +24,7 @@ class ListViewItemWithImage {
           //         title: Text(text),
           //       );
           //     });
-          Navigator.push(context, screenToRouteTo);
+          Navigator.of(context).pushNamed('/exercisesDetails');
         },
       ),
       Divider(height: 40.0, color: appTheme.Theme().separators.gray)
