@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../theme/theme.dart' as appTheme;
 import './trainingCatalog.screen.dart';
 
 class TrainingCatalog extends StatelessWidget {
