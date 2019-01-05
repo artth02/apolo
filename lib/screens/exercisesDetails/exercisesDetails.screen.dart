@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'dart:convert';
-import '../../widgets/listViewItemDetailed/listViewItemDetailed.class.dart';
-import '../../widgets/listViewItemDetailed/listViewItemDetailed.dart';
+import 'package:apolo/widgets/listViewItemDetailed/listViewItemDetailed.class.dart';
+import 'package:apolo/widgets/listViewItemDetailed/listViewItemDetailed.dart';
 
 class ExercisesDetailsScreen
     extends State<ExercisesDetailsScreenStatefulWidget> {
@@ -65,9 +65,11 @@ class ExercisesDetailsScreen
     return ListView.builder(
         padding: const EdgeInsets.all(16.0),
         itemCount: itemDetailedList.length,
+        shrinkWrap: true,        
+        physics: ClampingScrollPhysics(),
         itemExtent: 100,
         itemBuilder: (context, i) {
-          return new ListViewItemDetailed().build(context, itemDetailedList[i]);
+          return ListViewItemDetailed().build(context, itemDetailedList[i]);
         });
   }
 }
