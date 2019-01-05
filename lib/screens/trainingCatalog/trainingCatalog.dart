@@ -6,7 +6,7 @@ class TrainingCatalog extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text('Welcome to Flutter'),
+          title: Text('Apolo App'),
         ),
         body: Center(
           child: TrainingCatalogScreen().build(context),

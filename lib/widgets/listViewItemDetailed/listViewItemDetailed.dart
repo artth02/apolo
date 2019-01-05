@@ -8,7 +8,7 @@ class ListViewItemDetailed {
     ListViewItemDetailedClass item,
   ) {
     return new Container(
-      child: Text(item.description),
+      child: Text(item.description, style: appTheme.Theme().secondaryColorText),
     );
 
     // ListTile(

@@ -35,19 +35,20 @@ class TrainingCatalogScreen
   Widget build(BuildContext context) {
     const exercisesDetailScreenRoute = '/exercisesDetails';
 
-    List<ListViewItemWithImageClass> roadMapList =
+    List<ListViewItemWithImageClass> exercisesList =
         (jsonDecode(listJSON) as List)
             .map((item) => new ListViewItemWithImageClass.fromJson(item))
             .toList();
 
-    return ListView.builder(
-        padding: const EdgeInsets.all(16.0),
-        itemCount: roadMapList.length,
-        itemExtent: 100,
-        itemBuilder: (context, i) {
-          return new ListViewItemWithImage().build(
-              context, exercisesDetailScreenRoute, roadMapList[i].description);
-        });
+    return Container(
+      child: ListView.builder(
+          padding: const EdgeInsets.all(16.0),
+          itemCount: exercisesList.length,
+          itemExtent: 100,
+          itemBuilder: (context, i) {
+            return new ListViewItemWithImage().build(context, exercisesDetailScreenRoute, exercisesList[i]);
+          }),
+    );
   }
 }
 
